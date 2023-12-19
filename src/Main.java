@@ -5,14 +5,17 @@ public class Main {
         People bose = new People("Боссе", 159);
         People betan = new People("Бетан", 159);
         People little = new People("Малыш", 130);
-        Mythical flying = new Mythical("Карлсон", 100, "Домик на крыше");
+        Mythical flying = new Mythical("Карлсон", 100, Places.KarlsonHouse);
 
-        People sr = new People("Малыш", 130);
-        System.out.println(sr.equals(little));
-        System.out.println(sr.toString());
-        System.out.println(sr.hashCode());
 
-        dad.changePosition("Крыша");
-        mother.make_new(Mass_media.Radio, "Обнаружен карлсон", "Какая-то фантастическая статья");
+        dad.keepSilence(flying);
+        mother.keepSilence(flying);
+        System.out.println('\n');
+
+        mother.article(MassMedia.Radio, "Обнаружен", flying, "Какая-то фантастическая статья");
+        dad.see(Places.KarlsonHouse.toString());
+        betan.climb(Places.Roof);
+        System.out.println(betan.getPosition());
+        little.show(Places.RoofHouse.toString());
     }
 }

@@ -1,4 +1,4 @@
-public enum Mass_media {
+public enum MassMedia {
     Television,
     Newspaper,
     Magazine,

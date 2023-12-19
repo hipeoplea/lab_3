@@ -1,4 +1,4 @@
 public interface CreatureInterface {
-    public void changePosition(String newPosition);
+    public void changePosition(Places newPosition);
 
 }

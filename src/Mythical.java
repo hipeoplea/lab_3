@@ -1,15 +1,15 @@
 import java.sql.PreparedStatement;
 import java.util.Objects;
 
-public class Mythical extends Creature implements MythicalInterface {
+public class Mythical extends Creature implements MythicalIntarface {
 
-    public Mythical(String name, int height, String position) {
+    public Mythical(String name, int height, Places position) {
         super(name, height, position);
     }
 
     @Override
     public String toString() {
-        return "Мифическое существо " + super.getName()
+        return "Мифическое существо Mythical" + super.getName()
                 + " ростом " + super.getHeight()
                 + " текущее местоположение: " + super.getPosition();
     }

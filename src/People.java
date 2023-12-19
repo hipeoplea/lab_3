@@ -1,9 +1,7 @@
-import java.util.Objects;
-
 public class People extends Creature implements PeopleInterface {
 
     public People(String name, int height) {
-        super(name, height, "Дом");
+        super(name, height, Places.House);
     }
 
     @Override
@@ -17,8 +15,8 @@ public class People extends Creature implements PeopleInterface {
     }
 
     @Override
-    public void climb(String message) {
-        System.out.println(this.getName() + " залез " + message);
+    public void climb(Places place) {
+        changePosition(place);
     }
 
     @Override
@@ -32,8 +30,8 @@ public class People extends Creature implements PeopleInterface {
     }
 
     @Override
-    public void keep_silence(String message) {
-        System.out.println(this.getName() + " не рассказал " + message);
+    public void keepSilence(Creature creature) {
+        System.out.println(this.getName() + " не рассказал о " + creature.getName());
     }
 
     @Override
@@ -55,8 +53,8 @@ public class People extends Creature implements PeopleInterface {
         return result;
     }
 
-    public void make_new(Mass_media media, String title, String text) {
-        System.out.println(media + "\n" + title + "\n" + text + "\n" + "от " + this.getName());
+    public void article(MassMedia media, String title, Creature creature, String text) {
+        System.out.println(media + "\n" + title + " " + creature.getName() + "\n" + text + "\n" + "от " + this.getName());
     }
 
 }

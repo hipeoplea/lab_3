@@ -1,8 +1,8 @@
 public abstract class Creature implements CreatureInterface{
     private final String name;
     private final int height;
-    private String position;
-    public Creature(String name, int height, String position){
+    private Places position;
+    public Creature(String name, int height, Places position){
         this.name = name;
         this.height = height;
         this.position = position;
@@ -15,12 +15,12 @@ public abstract class Creature implements CreatureInterface{
         return height;
     }
 
-    public String getPosition() {
+    public Places getPosition() {
         return position;
     }
     @Override
-    public void changePosition(String newPosition){
-        System.out.println(this.name + " переместился из " +this.position + " в " + newPosition);
+    public void changePosition(Places newPosition){
+        System.out.println(this.name + " переместился из " +this.position + " в " + newPosition.toString());
         this.position = newPosition;
     }
 }
