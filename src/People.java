@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class People extends Creature implements PeopleInterface {
 
     public People(String name, int height) {
@@ -41,16 +43,21 @@ public class People extends Creature implements PeopleInterface {
                 + " текущее местоположение: " + super.getPosition();
     }
 
-    @Override
-    public boolean equals(People o) {
-        return (super.getName().equals( o.getName())) && (super.getHeight() == o.getHeight());
-    }
+
 
     @Override
     public int hashCode() {
         int result = super.getName().hashCode();
         result = 31 * result + (super.getHeight());
         return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        People other = (People) obj;
+        return Objects.equals(getName(), other.getName());
     }
 
     public void article(MassMedia media, String title, Creature creature, String text) {

@@ -1,7 +1,7 @@
 import java.sql.PreparedStatement;
 import java.util.Objects;
 
-public class Mythical extends Creature implements MythicalIntarface {
+public class Mythical extends Creature {
 
     public Mythical(String name, int height, Places position) {
         super(name, height, position);
@@ -15,8 +15,11 @@ public class Mythical extends Creature implements MythicalIntarface {
     }
 
     @Override
-    public boolean equals(Mythical obj) {
-        return (super.getName().equals( obj.getName())) && (super.getHeight() == obj.getHeight());
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        Mythical other = (Mythical) obj;
+        return Objects.equals(getName(),  other.getName());
     }
 
     @Override

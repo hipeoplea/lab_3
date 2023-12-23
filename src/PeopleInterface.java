@@ -5,5 +5,8 @@ public interface PeopleInterface {
     public void show(String message);
     public void see(String message);
     public void keepSilence(Creature creature);
-    public boolean equals(People o);
+
+
+
+
 }
