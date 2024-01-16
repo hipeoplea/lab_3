@@ -2,10 +2,13 @@ public abstract class Creature implements CreatureInterface{
     private final String name;
     private final int height;
     private Places position;
+
+    public MessageInteface message;
     public Creature(String name, int height, Places position){
         this.name = name;
         this.height = height;
         this.position = position;
+        this.message = new MessageHandler();
     }
 
     public String getName(){
@@ -20,7 +23,7 @@ public abstract class Creature implements CreatureInterface{
     }
     @Override
     public void changePosition(Places newPosition){
-        System.out.println(this.name + " переместился из " +this.position + " в " + newPosition.toString());
+        message.printMessage(this.name + " переместился из " +this.position + " в " + newPosition.toString());
         this.position = newPosition;
     }
 }

@@ -18,5 +18,21 @@ public class Main {
         betan.climb(Places.Roof);
         System.out.println(betan.getPosition());
         little.show(Places.RoofHouse.toString());
+
+
+
+        // Lab 4
+        Police police = new Police(){
+                @Override
+                public String givesObject(People o, Object a){
+                    if (a.equals(flying)){
+                        return "Пивной бочёнок найден" + o.toString();
+                    }
+                    return "Увы " + o.toString() + "передал нам неверный объект";
+                }
+        };
+
+        
+
     }
 }
